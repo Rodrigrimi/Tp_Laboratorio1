@@ -12,16 +12,30 @@ void MostrarMenu(int opcion)
     printf("Elija una opcion: \n");
 
 }
-/*int removeEmployee(sEmployee miEmpleado, int cant, int id)
+int removeEmployee(sEmployee miEmpleado, int cant, int id)
 {
-    int i;
-    for(i=0; i<cant; i++)
+     int i;
+    int varControl;
+    int aux;
+    printEmployees( miEmpleado,cant);
+    int option;
+    char opcion;
+    printf("Ingrese el numero de id a eliminar: \n");
+    scanf("%d",&aux);
+    varControl=findEmployeeById(miEmpleado,cant,aux);
+    if (varControl==1)
     {
+        for(i=0; i<cant; i++)
+        {
+            if(miEmpleado[i].id==aux)
+            {
+               miEmpleado[i].isEmpty=-1;
 
+            }
+        }
     }
-
     return -1;
-}*/
+}
 int addEmployees(sEmployee miEmpleado[],int cant)
 {
     int index;
