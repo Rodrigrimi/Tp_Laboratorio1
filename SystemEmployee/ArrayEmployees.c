@@ -12,15 +12,13 @@ void MostrarMenu(int opcion)
     printf("Elija una opcion: \n");
 
 }
-int removeEmployee(sEmployee miEmpleado, int cant, int id)
+int removeEmployee(sEmployee miEmpleado[], int cant, int id)
 {
-     int i;
+    int i;
     int varControl;
     int aux;
     printEmployees( miEmpleado,cant);
-    int option;
-    char opcion;
-    printf("Ingrese el numero de id a eliminar: \n");
+    printf("Ingrese el numero de id");
     scanf("%d",&aux);
     varControl=findEmployeeById(miEmpleado,cant,aux);
     if (varControl==1)
@@ -29,23 +27,22 @@ int removeEmployee(sEmployee miEmpleado, int cant, int id)
         {
             if(miEmpleado[i].id==aux)
             {
-               miEmpleado[i].isEmpty=-1;
 
             }
         }
     }
     return -1;
 }
-int addEmployees(sEmployee miEmpleado[],int cant)
+int addEmployees(sEmployee miEmpleado[],int cant,int id)
 {
     int index;
     int auxReturno=-1;
-    int id=100;
+
     index=LugarLibre(miEmpleado,cant);
     if(index!=-1)
     {
 
-        miEmpleado[index].id=id++;
+        miEmpleado[index].id=GenereID(miEmpleado,cant,id);
         printf("Ingrese el nombre del empleado: ");
         fflush(stdin);
         scanf("%s",miEmpleado[index].name);
@@ -69,6 +66,7 @@ int addEmployees(sEmployee miEmpleado[],int cant)
         miEmpleado[index].isEmpty=-1;
         auxReturno=1;
     }
+
     return auxReturno;
 }
 void ModificarDatoPorId(sEmployee miEmpleado[],int cant)
@@ -90,25 +88,25 @@ void ModificarDatoPorId(sEmployee miEmpleado[],int cant)
             {
                 do
                 {
-
-                    printf("ingrese la opcion a modificar");
+                    printf("ingrese la opcion a modificar\n");
+                    printf("1- Modifica el Nombre\n");
+                    printf("2- Modifica el Apellido\n");
+                    printf("3- Modifica el Salario \n");
+                    printf("4- Modifica el sector\n");
                     scanf("%d",&option);
                     switch(option)
                     {
                     case 1:
-
                         printf("Ingrese el nombre del empleado: ");
                         fflush(stdin);
                         scanf("%s",miEmpleado[i].name);
                         break;
-
                     case 2:
                         printf("Ingrese el apellido del empleado: ");
                         fflush(stdin);
                         scanf("%s",miEmpleado[i].lastName);
                         break;
                     case 3:
-
                         printf("Ingrese la salario del Empleado: ");
                         scanf("%f",&miEmpleado[i].salary);
                         while (miEmpleado[i].salary < 0 )
@@ -118,7 +116,6 @@ void ModificarDatoPorId(sEmployee miEmpleado[],int cant)
                         }
                         break;
                     case 4:
-
                         printf("Ingrese el sector del empleado: ");
                         scanf("%d",&miEmpleado[i].sector);
                         while (miEmpleado[i].sector <0 || miEmpleado[i].sector > 11)
@@ -132,8 +129,6 @@ void ModificarDatoPorId(sEmployee miEmpleado[],int cant)
                         scanf("%c",&opcion);
                         break;
                     }
-
-
                     miEmpleado[i].isEmpty=-1;
                 }
                 while(opcion=='n');
@@ -161,7 +156,6 @@ int findEmployeeById(sEmployee miEmpleado[], int cant, int pedido)
         if(miEmpleado[i].id==pedido&&miEmpleado[i].isEmpty==-1)
         {
             indice =  1;
-
             break;
         }
 
@@ -176,17 +170,13 @@ void printEmployees(sEmployee miEmpleado[],int cant)
     {
         if(miEmpleado[i].isEmpty==-1)
         {
-            printf("%4d \t%20s\t%20s\t%10f\t%8d\t\n", miEmpleado[i].id,
-                   miEmpleado[i].name,
-                   miEmpleado[i].lastName,
-                   miEmpleado[i].salary,
-                   miEmpleado[i].sector);
+            printEmployee(miEmpleado[i]);
         }
 
     }
 }
 
-void sortEmployees(sEmployee miEmpleado[],int cant)
+void Ordenamiento(sEmployee miEmpleado[],int cant)
 {
     int i;
     int j;
@@ -234,4 +224,53 @@ int LugarLibre(sEmployee miEmpleado[], int cant)
     }
     return indice;
 }
+int GenereID(sEmployee miEmpleado[],int cant,int id)
+{
+    int i;
+    int generoId;
 
+    for(i=0; i<cant; i++)
+    {
+        generoId=miEmpleado[i].id;
+        generoId=id++;
+    }
+    return generoId;
+}
+void sortEmployees(sEmployee miEmpleado[], int cant, int order)
+{
+    int i;
+    switch(order)
+    {
+    case 1:
+        for(i=0; i<cant; i++)
+        {
+            if(miEmpleado[i].isEmpty==-1)
+            {
+                printEmployee(miEmpleado[i]);
+
+            }
+
+        }
+        system("pause");
+        break;
+    case 2:
+            for(i=cant-1;i>=0; i--)
+        {
+            if(miEmpleado[i].isEmpty==-1)
+            {
+                printEmployee(miEmpleado[i]);
+            }
+        }
+        system("pause");
+        break;
+    }
+}
+
+void printEmployee(sEmployee miEmpleado)
+{
+    printf("%4d \t%20s\t%20s\t%10f\t%8d\t\n", miEmpleado.id,
+           miEmpleado.name,
+           miEmpleado.lastName,
+           miEmpleado.salary,
+           miEmpleado.sector);
+}
