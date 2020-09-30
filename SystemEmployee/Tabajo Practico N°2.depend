@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1601166352 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\utn\tabajo practico n°2\funciones tp°2.c
+	"ArrayEmployees.h"
+
+1601418942 c:\gog games\carpeta git\programacion_1_laboratorio_1\utn\tabajo practico n°2\arrayemployees.h
+	<stdio.h>
+	<stdlib.h>
+
+1601415267 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\utn\tabajo practico n°2\arrayemployees.c
+	"ArrayEmployees.h"
+	<string.h>
+	<stdio.h>
+
+1601418541 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\utn\tabajo practico n°2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1601479866 source:c:\users\eldun\onedrive\escritorio\tabajo-practico-n-2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1601479866 c:\users\eldun\onedrive\escritorio\tabajo-practico-n-2\arrayemployees.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
