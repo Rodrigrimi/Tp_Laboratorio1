@@ -6,8 +6,8 @@ void MostrarMenu(int opcion)
     printf("2. MODIFICAR: \n");
     printf("3. BAJA:  \n");
     printf("4. INFORMAR: \n");
-    printf("\t1. Listado de los empleados ordenados alfabÈticamente por Apellido y Sector.\n");
-    printf("\t2. Total y promedio de los salarios, y cu·ntos empleados superan el salario promedio.\n\n\n");
+    printf("\t1. Listado de los empleados ordenados alfab√©ticamente por Apellido y Sector.\n");
+    printf("\t2. Total y promedio de los salarios, y cu√°ntos empleados superan el salario promedio.\n\n\n");
     printf("10. Salir\n");
     printf("Elija una opcion: \n");
 
@@ -159,6 +159,7 @@ void ModificarDatoPorId(sEmployee miEmpleado[],int cant)
                     printf("2- Modifica el Apellido\n");
                     printf("3- Modifica el Salario \n");
                     printf("4- Modifica el sector\n");
+                    printf("5- salir de las modificaciones");
                     scanf("%d",&option);
                     while(option<1||option>5)
                     {
