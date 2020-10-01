@@ -27,14 +27,17 @@
 	<string.h>
 	<ctype.h>
 
-1601479866 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajos-practicos\tp_laboratorio1\systememployee\main.c
+1601588998 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajos-practicos\tp_laboratorio1\systememployee\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayEmployees.h"
 
-1601479866 c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajos-practicos\tp_laboratorio1\systememployee\arrayemployees.h
+1601589350 c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajos-practicos\tp_laboratorio1\systememployee\arrayemployees.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
+
+1601581935 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajos-practicos\tp_laboratorio1\systememployee\arrayemployees.c
+	"ArrayEmployees.h"
 
