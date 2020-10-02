@@ -19,7 +19,6 @@ void MostrarMenu()
     printf("|_______________________________________________________________________________________________________|\n");
     printf("|\tElija una opcion: \t\t\t\t\t\t\t\t\t        | \n");
     printf("|_______________________________________________________________________________________________________|\n");
-
 }
 int addEmployees(sEmployee miEmpleado[],int cant,int id)
 {
@@ -28,7 +27,7 @@ int addEmployees(sEmployee miEmpleado[],int cant,int id)
     if(index!=-1)
     {
         miEmpleado[index].id=GenereID(0,id);
-      TolowerToupperName(miEmpleado[index].name,miEmpleado[index].lastName);
+        TolowerToupperName(miEmpleado[index].name,miEmpleado[index].lastName);
         printf("Ingrese la salario del empleado: ");
         scanf("%f",&miEmpleado[index].salary);
         printf("Ingrese el sector del empleado: ");
@@ -58,16 +57,12 @@ void PromedioSalarios(sEmployee miEmpleado[],int cant)
     if(i==cant)
     {
         totalpromedio=auxSalario/cant;
-
         printf(" El Tota de los salarios es: \t%f\n  El promedio de los salarios: \t%f\n\n Y los empleados superan el salario promedio  \n\n",auxSalario,totalpromedio);
-
         for(i=0; i<cant; i++)
         {
             if(miEmpleado[i].salary>totalpromedio)
             {
-
                 printEmployee(miEmpleado[i]);
-
             }
         }
     }
@@ -79,7 +74,6 @@ int removeEmployee(sEmployee miEmpleado[], int cant)
     int aux;
     int  retorno;
     retorno=0;
-
     printEmployees( miEmpleado,cant);
     printf("_______________________________________________________________");
     printf("Ingrese el numero de id");
@@ -180,7 +174,6 @@ void ModificarDatoPorId(sEmployee miEmpleado[],int cant)
                     }
                 }
                 while(option!=5);
-
             }
         }
     }
@@ -212,7 +205,6 @@ int findEmployeeById(sEmployee miEmpleado[], int cant, int pedido)
             indice =  1;
             break;
         }
-
     }
     return indice;
 }
@@ -224,20 +216,15 @@ void printEmployees(sEmployee miEmpleado[],int cant)
     {
         if(miEmpleado[i].isEmpty==-1)
         {
-
             printEmployee(miEmpleado[i]);
-
         }
-
     }
 }
-
 void Ordenamiento(sEmployee miEmpleado[],int cant)
 {
     int i;
     int j;
     sEmployee auxString;
-
     for(i=0; i<cant-1; i++)
     {
         for(j=i+1; j<cant; j++)
@@ -252,16 +239,12 @@ void Ordenamiento(sEmployee miEmpleado[],int cant)
             {
                 if(strcmp(miEmpleado[i].lastName,miEmpleado[j].lastName)==0&&
                         miEmpleado[i].sector<miEmpleado[j].sector&&miEmpleado[i].isEmpty==-1)
-
                 {
                     auxString=miEmpleado[i];
                     miEmpleado[i]=miEmpleado[j];
                     miEmpleado[j]=auxString;
-
                 }
             }
-
-
         }
     }
 }
@@ -269,7 +252,6 @@ int LugarLibre(sEmployee miEmpleado[], int cant)
 {
     int i;
     int indice = -1;
-
     for(i=0; i<cant; i++)
     {
         if(miEmpleado[i].isEmpty==0)
@@ -297,9 +279,7 @@ void sortEmployees(sEmployee miEmpleado[], int cant, int order)
             if(miEmpleado[i].isEmpty==-1)
             {
                 printEmployee(miEmpleado[i]);
-
             }
-
         }
         system("pause");
         break;
@@ -330,16 +310,11 @@ void printEmployee(sEmployee miEmpleado)
 }
 void TolowerToupperName(char name[],char lastName[])
 {
-
     char nombre[51];//19
     char apellido[51];//19
-
     char buffer[128];
     int i;
     int len;
-    //printf("%d\n\n", isspace('9'));
-    //otras funciones: isdigit - isalpha
-
     printf("Ingrese su nombre: ");
     fflush(stdin);
     gets(buffer);
@@ -351,8 +326,8 @@ void TolowerToupperName(char name[],char lastName[])
     }
     printf("Ingrese su apellido: ");
     fflush(stdin);
-     gets(apellido);
-      while(strlen(apellido)>51)
+    gets(apellido);
+    while(strlen(apellido)>51)
     {
         printf("Reingrese su nombre: ");
         fflush(stdin);
@@ -379,7 +354,6 @@ void TolowerToupperName(char name[],char lastName[])
             apellido[i+1]=toupper(apellido[i+1]);
         }
     }
-
     strcpy(name,nombre);
     strcpy(lastName,apellido);
 }
