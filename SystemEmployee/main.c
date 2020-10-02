@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "ArrayEmployees.h"
 #define tam 1000
-
 int main()
 {
     sEmployee miEmpleado[tam] ;  /* = {{10,"rodrigo","grimalt",30000,1,-1},
@@ -35,13 +34,11 @@ int main()
         {
         case 1:
             system("cls");
-
             retorno = addEmployees(miEmpleado,tam,idValor);
             if(retorno!=-1)
             {
                 idValor++;
                 printf("Carga del empleado exitosa...\n");
-
             }
             else
             {
@@ -87,10 +84,8 @@ int main()
             }
             break;
         }
-
     }
     while(opcion!=10);
     printf("Salio, usted no quiere cargar mas empleados");
     return 0;
 }
-
