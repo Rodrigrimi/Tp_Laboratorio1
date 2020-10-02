@@ -93,7 +93,7 @@ int findEmployeeById(sEmployee miEmpleado[], int cant,int pedido);
 void ModificarDatoPorId(sEmployee miEmpleado[],int cant);
 /** \brief
  *
- * \param cant int pido el tamaño y le hago un autoincremento para la generacion de un id autoincremental
+ * \param cant int pido el tamaÃ±o y le hago un autoincremento para la generacion de un id autoincremental
  * \param id int
  * \return int
  *
@@ -116,7 +116,6 @@ void sortEmployees(sEmployee miEmpleado[], int cant, int order);
  *
  */
 void PromedioSalarios(sEmployee miEmpleado[],int cant);
-
 /** \brief
  *
  * \param name[] char mando por parametro el nombre me lo retorna la primera en mayusculas y el resto en minusculas
