@@ -45,13 +45,13 @@ int main()
             controller_loadFromBinary("data.csv",lista);
             break;
         case 3:
-            //controller_addEmployee();
+            controller_addEmployee(lista);
             break;
         case 4:
-            // controller_editEmployee();
+            // controller_editEmployee(lista);
             break;
         case 5:
-            //controller_removeEmployee();
+            //controller_removeEmployee(lista);
             break;
         case 6:
             controller_ListEmployee(lista);

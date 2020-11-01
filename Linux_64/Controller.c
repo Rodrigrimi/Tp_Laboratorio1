@@ -59,7 +59,26 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
-
+    Employee* empleado;
+    empleado=employee_new();
+    char auxId;
+    char auxNombre;
+    char auxHorasTra;
+    char auxSueldo;
+    if(pArrayListEmployee!=NULL)
+    {
+        if(employee_setId(empleado,auxId)==1 &&
+                        employee_setNombre(empleado,auxNombre)==1 &&
+                        employee_setHorasTrabajadas(empleado,auxHorasTra)==1 &&
+                        employee_setSueldo(empleado,auxSueldo)==1)
+        {
+            employee_setId(empleado,atoi(auxId));
+            employee_setNombre(empleado,auxNombre);
+            employee_setHorasTrabajadas(empleado,atoi(auxHorasTra));
+            employee_setSueldo(empleado,atoi(auxSueldo));
+        }
+        ll_add(pArrayListEmployee,empleado);
+    }
     return 1;
 }
 
@@ -72,6 +91,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
+
     return 1;
 }
 
