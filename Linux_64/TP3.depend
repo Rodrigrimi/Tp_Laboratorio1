@@ -110,27 +110,37 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1604000313 source:/home/rodrigo/Tp_Laboratorio1/Linux_64/Employee.c
+1604412975 source:/home/rodrigo/Tp_Laboratorio1/Linux_64/Employee.c
 	<stdlib.h>
 	"Employee.h"
 	<string.h>
+	<ctype.h>
+	<stdio_ext.h>
 
-1603997304 /home/rodrigo/Tp_Laboratorio1/Linux_64/Employee.h
+1604412960 /home/rodrigo/Tp_Laboratorio1/Linux_64/Employee.h
+	"LinkedList.h"
 
-1604000385 source:/home/rodrigo/Tp_Laboratorio1/Linux_64/parser.c
+1604350496 source:/home/rodrigo/Tp_Laboratorio1/Linux_64/parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 
-1533118622 /home/rodrigo/Tp_Laboratorio1/Linux_64/LinkedList.h
+1604374430 /home/rodrigo/Tp_Laboratorio1/Linux_64/LinkedList.h
 
-1604247680 source:/home/rodrigo/Tp_Laboratorio1/Linux_64/main.c
+1604413143 source:/home/rodrigo/Tp_Laboratorio1/Linux_64/main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Controller.h"
 	"Employee.h"
 
-1533118622 /home/rodrigo/Tp_Laboratorio1/Linux_64/Controller.h
+1604259158 /home/rodrigo/Tp_Laboratorio1/Linux_64/Controller.h
+
+1604416194 source:/home/rodrigo/Tp_Laboratorio1/Linux_64/Controller.c
+	<stdio_ext.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
 

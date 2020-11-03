@@ -22,7 +22,9 @@ int main()
     LinkedList* lista;
     lista = ll_newLinkedList();
     int opcion;
-    int remover;
+    int addEmpleado;
+    addEmpleado=1;
+   // int remover;
     do
     {
         printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto)\n");
@@ -45,25 +47,26 @@ int main()
             controller_loadFromBinary("data.csv",lista);
             break;
         case 3:
-            controller_addEmployee(lista);
+            controller_addEmployee(lista,addEmpleado);
             break;
         case 4:
-            // controller_editEmployee(lista);
+            controller_editEmployee(lista);
             break;
         case 5:
-            //controller_removeEmployee(lista);
+            controller_removeEmployee(lista);
             break;
         case 6:
             controller_ListEmployee(lista);
             break;
         case 7:
-            //   controller_sortEmployee();
+            controller_sortEmployee(lista);
+
             break;
         case 8:
-            //controller_saveAsText("data.txt",lista);
+            controller_saveAsText("data.txt",lista);
             break;
         case 9:
-            // controller_saveAsBinary("data.dat",lista);
+            controller_saveAsBinary("data.dat",lista);
             break;
         }
     }

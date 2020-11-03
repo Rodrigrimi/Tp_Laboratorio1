@@ -17,8 +17,8 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
     char nombre[51];
     char horasTr[10];
     char sueldo[10];
-    int cuantos;
     int retorno=0;
+    int cuantos;
     if(pFile!=NULL)
     {
         fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",id,nombre,horasTr,sueldo);

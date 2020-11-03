@@ -286,7 +286,7 @@ void sortEmployees(sEmployee miEmpleado[], int cant, int order)
                 printEmployee(miEmpleado[i]);
             }
         }
-        system("pause");
+       // system("pause");
         break;
     case 2:
         for(i=cant-1; i>=0; i--)
@@ -296,7 +296,7 @@ void sortEmployees(sEmployee miEmpleado[], int cant, int order)
                 printEmployee(miEmpleado[i]);
             }
         }
-        system("pause");
+       // system("pause");
         break;
     }
 }
