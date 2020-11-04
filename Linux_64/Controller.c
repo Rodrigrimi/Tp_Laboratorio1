@@ -197,14 +197,84 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-    LinkedList* aux;
+    criterioOrdenamiento(pArrayListEmployee);
+    /*LinkedList* aux;
     aux=ll_clone(pArrayListEmployee);
-
+    int opcion;
     if (aux!=NULL)
     {
-        ll_sort(aux,employee_CompareById,0);
-        controller_ListEmployee(aux);
-    }
+        do
+
+        {
+            printf("        --Seleccione el criterio de ordenamiento -- \n");
+            printf("1- Por su id:\n");
+            printf("2- Por su sueldo:\n");
+            printf("3- Por sus horas trabajadas:\n");
+            printf("4- Por sus nombres:\n");
+            printf("5- Salir\n");
+            scanf("%d",&opcion);
+            __fpurge(stdin);
+            switch(opcion)
+            {
+                case 1:
+                    printf("Ingrese la opcion si 1=ascendente o 2=decendente\n");
+                    if(opcion==1)
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareById,1);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    else
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareById,0);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    __fpurge(stdin);
+                    break;
+                case 2:
+                    printf("Ingrese la opcion si 1=ascendente o 2=decendente\n");
+                    if(opcion==1)
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareBySueldo,1);
+                        ontroller_ListEmployee(pArrayListEmployee);
+                    }
+                    else
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareBySueldo,0);
+                        ontroller_ListEmployee(pArrayListEmployee);
+                    }
+                    __fpurge(stdin);
+                    break;
+                case 3:
+                    printf("Ingrese la opcion si 1=ascendente o 2=decendente\n");
+                    if(opcion==1)
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareByHT,1);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    else
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareByHT,0);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    __fpurge(stdin);
+                    break;
+                case 4:
+                    printf("Ingrese la opcion si 1=ascendente o 2=decendente\n");
+                    if(opcion==1)
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareByName,1);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    else
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareByName,0);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    __fpurge(stdin);
+                    break;
+            }
+        }while(opcion!=5);
+    }*/
 
     return 1;
 }
@@ -263,19 +333,17 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
  */
 int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 {
-    int i;
-    int retorno;
-    int len;
-    len= ll_len(pArrayListEmployee);
-    FILE *punteroArchivoW=fopen(path,"wb");
-    Employee* Listado;
-    for(i=0;i<len;i++)
+    FILE* pArchivo;
+    int retorno=-1;
+    if(path!=NULL&& pArrayListEmployee!=NULL&&ll_isEmpty(pArrayListEmployee)==0)
     {
-        Listado=pArrayListEmployee+i;
-        fwrite(&Listado,sizeof(Employee),1,punteroArchivoW);
+        pArchivo=fopen(path,"wb");
+        if(pArchivo!=NULL)
+        {
+            retorno=parser_EmployeeFromBinary(pArchivo,pArrayListEmployee);
+        }
     }
-    fclose(punteroArchivoW);
-    retorno=1;
+
     return retorno;
 }
 

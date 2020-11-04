@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "Employee.h"
+#include "Controller.h"
 #include <string.h>
 #include <ctype.h>
 #include <stdio_ext.h>
@@ -147,7 +148,7 @@ int employee_CompareById(void* e1, void* e2)
     }
     return compare;
 }
-/*int employee_CompareByHT(void* e1, void* e2)
+int employee_CompareByHT(void* e1, void* e2)
 {
     int compare=0;
     Employee* emp1;
@@ -159,16 +160,16 @@ int employee_CompareById(void* e1, void* e2)
         emp1=(Employee*)e1;
         emp2=(Employee*)e2;
         employee_getHorasTrabajadas(emp1,&HT1);
-        employee_getHorasTrabajadas(emp2,&Ht2);
+        employee_getHorasTrabajadas(emp2,&HT2);
 
-        if(id1>id2)
+        if(HT1>HT2)
         {
 
             compare=1;
         }
         else
         {
-            if(id1<id2)
+            if(HT1<HT2)
             {
                 compare=-1;
             }
@@ -176,7 +177,35 @@ int employee_CompareById(void* e1, void* e2)
     }
     return compare;
 }
-*/
+int employee_CompareBySueldo(void* e1, void* e2)
+{
+    int compare=0;
+    Employee* emp1;
+    Employee* emp2;
+    int sueldo1;
+    int sieldo2;
+    if(e1!=NULL && e2!=NULL)
+    {
+        emp1=(Employee*)e1;
+        emp2=(Employee*)e2;
+        employee_getSueldo(emp1,&sueldo1);
+        employee_getSueldo(emp2,&sieldo2);
+
+        if(sueldo1>sieldo2)
+        {
+
+            compare=1;
+        }
+        else
+        {
+            if(sueldo1<sieldo2)
+            {
+                compare=-1;
+            }
+        }
+    }
+    return compare;
+}
 int employee_CompareByName(void* e1, void* e2)
 {
     int returnValue;
@@ -306,4 +335,86 @@ int validNumber(char* number)
 
     return 1;
 }
+void criterioOrdenamiento(LinkedList* pArrayListEmployee)
+{
+    int opcion;
+    if (pArrayListEmployee!=NULL)
+    {
+        do
 
+        {
+            printf("        --Seleccione el criterio de ordenamiento -- \n");
+            printf("1- Por su id:\n");
+            printf("2- Por su sueldo:\n");
+            printf("3- Por sus horas trabajadas:\n");
+            printf("4- Por sus nombres:\n");
+            printf("5- Salir\n");
+            scanf("%d",&opcion);
+            __fpurge(stdin);
+            switch(opcion)
+            {
+                case 1:
+                    printf("Ingrese la opcion si 1=ascendente o 2=decendente\n");
+                    scanf("%d",&opcion);
+                    if(opcion==1)
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareById,1);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    else
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareById,0);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    __fpurge(stdin);
+                    break;
+                case 2:
+                    printf("Ingrese la opcion si 1=ascendente o 2=decendente\n");
+                    scanf("%d",&opcion);
+                    if(opcion==1)
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareBySueldo,1);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    else
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareBySueldo,0);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    __fpurge(stdin);
+                    break;
+                case 3:
+                    printf("Ingrese la opcion si 1=ascendente o 2=decendente\n");
+                    scanf("%d",&opcion);
+                    if(opcion==1)
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareByHT,1);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    else
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareByHT,0);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    __fpurge(stdin);
+                    break;
+                case 4:
+                    printf("Ingrese la opcion si 1=ascendente o 2=decendente\n");
+                    scanf("%d",&opcion);
+                    if(opcion==1)
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareByName,1);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    else
+                    {
+                        ll_sort(pArrayListEmployee,employee_CompareByName,0);
+                        controller_ListEmployee(pArrayListEmployee);
+                    }
+                    __fpurge(stdin);
+                    break;
+            }
+        }while(opcion!=5);
+    }
+    __fpurge(stdin);
+}

@@ -26,6 +26,8 @@ int employee_setSueldo(Employee* employList,int sueldo);
 int employee_getSueldo(Employee* employList,int* sueldo);
 
 
+void criterioOrdenamiento(LinkedList* pArrayListEmployee);
+int employee_CompareBySueldo(void* e1, void* e2);
 int employee_CompareByHT(void* e1, void* e2);
 int employee_CompareById(void* e1, void* e2);
 int employee_CompareByName(void* emp1, void* emp2);
