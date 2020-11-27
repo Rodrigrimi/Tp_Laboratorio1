@@ -37,24 +37,20 @@ long int CalcularFactorial (float numero)
 float Divission(float numero,float divisor)
 {
     float resultado;
-    resultado=numero/divisor;
-    return resultado;
+    return  resultado=numero/divisor;
 }
 float SumarTotales(float numero, float acum)
 {
     float suma;
-    suma=numero+acum;
-    return suma;
+    return suma=numero+acum;
 }
 float RestarTotales(float numero, float acum)
 {
     float resta;
-    resta=numero-acum;
-    return resta;
+    return resta=numero-acum;
 }
 float MultiplicarTotales(float numero, float acum)
 {
     long int multiplicaNumero;
-    multiplicaNumero=numero*acum;
-    return multiplicaNumero;
+    return multiplicaNumero=numero*acum;
 }

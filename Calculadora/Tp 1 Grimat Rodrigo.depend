@@ -23,3 +23,15 @@
 1601067994 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajos-practicos\tp_laboratorio1\calculadora\main.c
 	"Nuebo.h"
 
+1606486851 source:/home/rodrigo/Tp_Laboratorio1/Calculadora/Funciones.c
+	"Nuebo.h"
+
+1603997006 /home/rodrigo/Tp_Laboratorio1/Calculadora/Nuebo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1606486861 source:/home/rodrigo/Tp_Laboratorio1/Calculadora/main.c
+	"Nuebo.h"
+

@@ -13,16 +13,32 @@ int main()
     do
     {
         MostrarMenu(numeroIngresadoA,numeroIngresadoB);
-        opcionA=CargarNumeros(opcionA);
-
+        printf("Ingrese una opcion:\n");
+        scanf("%d",&opcionA);
         switch(opcionA)
         {
         case 1:
 
             numeroIngresadoA=CargarNumeros(numeroIngresadoA);
+            if(numeroIngresadoA==numeroIngresadoA)
+            {
+                printf("Exito en la carga del numero\n");
+            }
+            else
+            {
+                printf("No se pudo cargar el numero Ingresado\n");
+            }
             break;
         case 2:
             numeroIngresadoB=CargarNumeros(numeroIngresadoB);
+            if(numeroIngresadoB==numeroIngresadoB)
+            {
+                printf("Exito en la carga del numero\n");
+            }
+            else
+            {
+                printf("No se pudo cargar el numero Ingresado\n");
+            }
             break;
         case 3:
             if(numeroIngresadoB<=0&&numeroIngresadoA<=0)
@@ -48,7 +64,6 @@ int main()
             }
             break;
         case 4:
-            printf ("\nEl resultado de A+B es:: %.2f\n",resSuma);
             printf ("\nEl resultado de A+B es:: %.2f\n",resSuma);
             printf ("\nEl resultado de A-B es:  %.2f\n",resResta);
             printf ("\nEl resultado de la A*B es: %.2f\n",resMultiplicacion);
@@ -77,6 +92,7 @@ int main()
             {
                 printf("\nNo se puede realizar el factorial de un numero negativo y decimal\n");
             }
+
             break;
         case 5:
             printf("\t\tGracias por usar la calculadora\n");
